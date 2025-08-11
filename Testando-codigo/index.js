@@ -17,7 +17,7 @@ function clicarNoBotao4(){
         let digitouIdade = prompt("Olá " + digitarNome + ", Qual a sua idade ?")
     
 
-    alert("Acabei de conhecer " + digitarNome + "que tem " + digitouIdade + " anos")
+    alert("Acabei de conhecer " + digitarNome + " que tem " + digitouIdade + " anos")
 }}
 
 function clicarNoBotao5(){
@@ -57,4 +57,26 @@ function conversorDeMedidas(){
     resultado.innerHTML += `<p>${dm} decímetros (dm)</p>`
     resultado.innerHTML += `<p>${cm} centímetros (cm)</p>`
     resultado.innerHTML += `<p>${mm} milímetros (mm)</p>`
+}
+
+function converterTemperatura(){
+    let temperatura = Number(prompt('Digite aqui a temperatura em °C (Celcius)').replace(',', '.'))
+    let resultadoTemperatura = window.document.getElementById('temperatuaConvertida')
+
+    let fahrenheit = (Number(temperatura) * 9/5) + 32
+    let kelvin = Number(temperatura) + 273.15
+
+    resultadoTemperatura.innerHTML = `<p><b>A temperatura ${temperatura}, corresponde a...</p></b> `
+    resultadoTemperatura.innerHTML += `<p> ${fahrenheit}°F (Fahrenheit)`
+    resultadoTemperatura.innerHTML += `<p> ${kelvin}°K (kelvin)`
+}
+
+let digitarMoeda = Number(prompt('Antes de mais nada. Quanto está a cotação do Dolar agora?').replace(',', '.'))
+
+function converterMoedas(){
+    let dinheiroNaCarteira = Number(prompt('Quantos R$ você tem na carteira?'))
+    let valorNaCarteira = window.document.getElementById('conversorDeMoedas')
+    let resultadoDoDinheiro = dinheiroNaCarteira * digitarMoeda
+
+    valorNaCarteira.innerHTML = `<p>Você tem ${resultadoDoDinheiro.toFixed(2)} Dolares`
 }
