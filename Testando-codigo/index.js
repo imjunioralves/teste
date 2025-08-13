@@ -71,12 +71,27 @@ function converterTemperatura(){
     resultadoTemperatura.innerHTML += `<p> ${kelvin}°K (kelvin)`
 }
 
-let digitarMoeda = Number(prompt('Antes de mais nada. Quanto está a cotação do Dolar agora?').replace(',', '.'))
+//let digitarMoeda = Number(prompt('Antes de mais nada. Quanto está a cotação do Dolar agora?').replace(',', '.'))
 
-function converterMoedas(){
+/*function converterMoedas(){
     let dinheiroNaCarteira = Number(prompt('Quantos R$ você tem na carteira?'))
     let valorNaCarteira = window.document.getElementById('conversorDeMoedas')
     let resultadoDoDinheiro = dinheiroNaCarteira * digitarMoeda
 
     valorNaCarteira.innerHTML = `<p>Você tem ${resultadoDoDinheiro.toFixed(2)} Dolares`
+}*/
+
+function calculadoraDeDesconto(){
+    let produtoEstaComprando = prompt('Qual produto está comprando?')
+    let precoDoProduto = Number(prompt(`Qual é o preço de ${produtoEstaComprando}?`))
+    let valorDoDesconto = precoDoProduto  * 10 / 100
+    let precoFinal = precoDoProduto - valorDoDesconto
+    let resultadoDoDesconto = window.document.getElementById('calcularDesconto')
+
+    resultadoDoDesconto.innerHTML = `<h2>Calculando o desconto de 10% de ${produtoEstaComprando}</h2>`
+    resultadoDoDesconto.innerHTML += `<p>O preço original era R$ ${precoDoProduto.toFixed(2)}</p>`
+    resultadoDoDesconto.innerHTML += `<p>Você acaba de ganhar R$ ${valorDoDesconto.toFixed(2)} de desconto</p>`
+    resultadoDoDesconto.innerHTML += `<p>No fim, você vai pagar R$ ${precoFinal.toFixed(2)} pelo produto ${produtoEstaComprando}</p>`
+
+
 }
