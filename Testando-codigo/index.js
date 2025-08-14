@@ -95,3 +95,22 @@ function calculadoraDeDesconto(){
 
 
 }
+
+function reajusteDoSalario(){
+    let nomeDoFuncionario = prompt('Qual é o nome do funcionário?');
+    let salarioDoFuncionario = Number(prompt(`Qual é o salário de ${nomeDoFuncionario}?` ).replace(',' , '.'));
+    let reajusteSalarial = Number(prompt(`O Salário de ${nomeDoFuncionario}, vai ser reajustado em qual porcentagem?`));
+    
+    let valorAumento = salarioDoFuncionario * (reajusteSalarial / 100);
+    let salarioFinal = salarioDoFuncionario + valorAumento;
+
+    let semestres = window.document.getElementById('paraReajustarOSalario');
+
+    semestres.innerHTML = `<p>O salário atual é de ${salarioDoFuncionario.toFixed(2)}</p>`
+    semestres.innerHTML += `<p>Com um aumento de ${reajusteSalarial}%, o salario vai aumentar R$ ${valorAumento.toFixed(2)}no proximo mês </p>`
+    semestres.innerHTML += `<p>E a partida dai, ${nomeDoFuncionario} vai passar a ganhar ${salarioFinal.toFixed(2)}</p>`
+
+
+
+
+}
